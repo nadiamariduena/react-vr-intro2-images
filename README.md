@@ -2,6 +2,8 @@
 
 ## Learning how to add and manipulate images
 
+[<img src="./img/react-vr-basic-components.jpg"/>](https://www.youtube.com/watch?v=PnYhS4Ygs3s&list=LL&index=5)
+
 <br>
 <br>
 
@@ -12,10 +14,10 @@
 [The Best 360 Cameras for 2021 | PCMag](https://uk.pcmag.com/digital-camcorders/89938/the-best-360-cameras-for-2020) -->
 
 <br>
-<br>
-<br>
 
-### START by adding images inside the static_assets folder 🌻
+# START 🐖
+
+- START by adding images inside the static_assets folder 🌻
 
 ###### You can find 360 panorama here:
 
@@ -73,3 +75,106 @@
 - Picture 1: 800 x 600
 - Picture 2: 400 x 300
 - Picture 3: 800 x 600
+
+- OR YOU CAN JUST DO LIKE ME and set up random images just to see what it makes
+
+### REMEMBER 🌞
+
+- You need to import "image" like so, to add additional images:
+
+```javascript
+// index.vr.js
+//  INCLUDE: image here:
+import { AppRegistry, asset, Pano, Image, View } from "react-vr";
+```
+
+<br>
+
+#### SET UP "height:" and "width:" 🐖
+
+```javascript
+<View>
+  <Image
+    style={{
+      width: 1,
+      height: 1,
+      //   CAREFUL!! here you use Meters instead of Pixels
+    }}
+  />
+</View>
+```
+
+#### SET UP "the axis"
+
+```javascript
+transform: [{ translate: [0, 1, -5] }]; //-5 is the Z-axis "- is back/forward"
+```
+
+- Z, AXIS
+
+[<img src="./img/XAxis_1000.gif"/>](https://www.turbosquid.com/Search/Index.cfm?keyword=damaggio)
+
+<br>
+
+[<img src="./img/z-axis.gif"/>](https://www.turbosquid.com/Search/Index.cfm?keyword=damaggio)
+
+<br>
+
+### result
+
+```javascript
+return (
+  <View>
+    <Pano source={asset("RedCliffs_Damaggio.jpg")} />
+
+    <View>
+      <Image
+        style={{
+          width: 2,
+          height: 2,
+          transform: [{ translate: [-10, 10, -10] }],
+        }}
+        source={asset("claudia-aran-bJy9TI5FGeU-unsplash.jpg")}
+      />
+    </View>
+  </View>
+);
+```
+
+#### NOW ADD A SECOND IMAGE (duplicate the first procedure)
+
+```javascript
+return (
+  <View>
+    <Pano source={asset("RedCliffs_Damaggio.jpg")} />
+
+      <View>
+        <Pano source={asset("RedCliffs_Damaggio.jpg")} />
+
+        <View>
+          <Image
+            style={{
+              width: 2,
+              height: 2,
+              transform: [{ translate: [0, 1, -4] }],
+            }}
+            source={asset("claudia-aran-bJy9TI5FGeU-unsplash.jpg")}
+          />
+        </View>
+        <View>
+          <Image
+            style={{
+              width: 2,
+              height: 2,
+              transform: [{ translate: [2, 2, -5] }],
+            }}
+            source={asset("clay-banks-k2jF0dYhEKc-unsplash.jpg")}
+          />
+        </View>
+      </View>
+);
+```
+
+<br>
+
+[<img src="./img/2image-example.gif"/>]()
