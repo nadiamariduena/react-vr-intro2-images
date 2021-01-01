@@ -158,7 +158,7 @@ return (
               height: 2,
               transform: [{ translate: [0, 1, -4] }],
             }}
-            source={asset("claudia-aran-bJy9TI5FGeU-unsplash.jpg")}
+            source={asset("andriyko-podilnyk-kOcPPFamcag-unsplash.jpg")}
           />
         </View>
         <View>
@@ -168,7 +168,7 @@ return (
               height: 2,
               transform: [{ translate: [2, 2, -5] }],
             }}
-            source={asset("clay-banks-k2jF0dYhEKc-unsplash.jpg")}
+            source={asset("coco-tafoya-2Z7GgUpsSqg-unsplash.jpg")}
           />
         </View>
       </View>
@@ -178,3 +178,94 @@ return (
 <br>
 
 [<img src="./img/2image-example.gif"/>]()
+
+###### If you play a bit with the second image, you will notice that since the images aren't wrapped in a container, the second image take reference from the FIRST ONE
+
+<br>
+
+### THE NEXT STEP 🐖
+
+- THE NEXT STEP is going to be a bit more complicated, because since its a spheric space, we must to know how to situate the images
+
+#### ROTATE { rotateY: 60 }]
+
+```javascript
+[{ translate: [0, 1, -10] }, { rotateY: 60 }]; //-60 to the opposite image
+```
+
+<br>
+
+```javascript
+  <View>
+          <Image
+            style={{
+              width: 1,
+              height: 1,
+              transform: [{ translate: [0, 1, -2] }, { rotateY: -60 }],
+            }}
+            source={asset("claudia-aran-bJy9TI5FGeU-unsplash.jpg")}
+          />
+        </View>
+        <View>
+          <Image
+            style={{
+              width: 1,
+              height: 1,
+              transform: [{ translate: [-2, 2, -2] }, { rotateY: 60 }],
+            }}
+            source={asset("clay-banks-k2jF0dYhEKc-unsplash.jpg")}
+          />
+        </View>
+      </View>
+```
+
+<br>
+
+#### RESULT (rotateY and rotateX )
+
+- If you rotate a little bit too much the images, they will be blurred.
+
+[<img src="./img/rotate_1.gif"/>]()
+
+<br>
+<br>
+<br>
+
+### TO BALANCE THE IMAGES 🐖
+
+- calculate the following:
+
+> IF the width and the height is 2, to this 2 you have to + 1, the result is 3 and this 3 will go to the second image
+
+[<img src="./img/calculation.gif"/>]()
+
+```javascript
+return (
+  <View>
+    <Pano source={asset("RedCliffs_Damaggio.jpg")} />
+
+    <View>
+      <Image
+        style={{
+          width: 2,
+          height: 2,
+          transform: [{ translate: [0, 1, -2] }, { rotateY: -45 }],
+        }}
+        source={asset("andriyko-podilnyk-kOcPPFamcag-unsplash.jpg")}
+      />
+    </View>
+    <View>
+      <Image
+        style={{
+          width: 2,
+          height: 2,
+          transform: [{ translate: [-2, 3, -2] }, { rotateY: 45 }],
+        }}
+        source={asset("coco-tafoya-2Z7GgUpsSqg-unsplash.jpg")}
+      />
+    </View>
+  </View>
+);
+```
+
+[<img src="./img/final-result.gif"/>]()

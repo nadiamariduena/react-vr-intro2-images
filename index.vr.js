@@ -12,19 +12,19 @@ export default class ReactVrIntro2 extends React.Component {
             style={{
               width: 2,
               height: 2,
-              transform: [{ translate: [0, 1, -4] }],
+              transform: [{ translate: [1, 1, -2] }, { rotateY: -45 }],
             }}
-            source={asset("claudia-aran-bJy9TI5FGeU-unsplash.jpg")}
+            source={asset("andriyko-podilnyk-kOcPPFamcag-unsplash.jpg")}
           />
         </View>
         <View>
           <Image
             style={{
-              width: 3,
-              height: 3,
-              transform: [{ translate: [2, 3, 5] }],
+              width: 2,
+              height: 2,
+              transform: [{ translate: [-2, 3, -2] }, { rotateY: 45 }],
             }}
-            source={asset("clay-banks-k2jF0dYhEKc-unsplash.jpg")}
+            source={asset("coco-tafoya-2Z7GgUpsSqg-unsplash.jpg")}
           />
         </View>
       </View>
@@ -33,3 +33,5 @@ export default class ReactVrIntro2 extends React.Component {
 }
 
 AppRegistry.registerComponent("ReactVrIntro2", () => ReactVrIntro2);
+
+
