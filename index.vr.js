@@ -5,7 +5,7 @@ export default class ReactVrIntro2 extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset("Chris Guico.jpg")} />
+        <Pano source={asset("RedCliffs_Damaggio.jpg")} />
       </View>
     );
   }

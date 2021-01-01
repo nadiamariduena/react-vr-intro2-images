@@ -17,6 +17,12 @@
 
 ### START by adding images inside the static_assets folder 🌻
 
+###### You can find 360 panorama here:
+
+[Unsplash (FREE)](https://unsplash.com/s/photos/360)
+
+[123RF (PAID)](https://www.123rf.com/photo_113527037_spherical-360-panorama-projection-interior-empty-room-3-d-rendering.html)
+
 - add 360 deg images to the panorama
 
 ```javascript
@@ -24,13 +30,23 @@
 
 <Pano source={asset("chess-world.jpg")} />
 // chess-world is the default image
-// 
+//
 //
 ```
 
 <br>
 
-##### DELETE the following:
+##### NEW IMAGE (result)
+
+- After hours of searching, I finally found something clean and free
+
+- Click on the image to visit the artist shop (nice 3D models)
+
+[<img src="./img/pano-img2.gif"/>](https://www.turbosquid.com/Search/Index.cfm?keyword=damaggio)
+
+<br>
+
+##### Before adding the additional images to the scene | DELETE the following:
 
 ```javascript
 <Text
